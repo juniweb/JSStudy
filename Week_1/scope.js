@@ -21,6 +21,6 @@
         console.log('i: ' + i);
     }
     
-    console.log('[global] i:' + i);    // 5 : 전역변수
+    console.log('[global] i:' + i);    // 6 : 전역변수
         
 })();
