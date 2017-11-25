@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var t = document.getElementById('target');
+                t.addEventListener('click', function(event){
+                    alert('Hello world');
+                });
+                t.addEventListener('click', function(event){
+                    alert('Hello world2');
+                });
+            })
+            
+        </script>
+        <input type="button" id="target" value="button" />
+    </body>
+</html>
