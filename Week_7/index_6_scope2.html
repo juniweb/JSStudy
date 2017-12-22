@@ -23,14 +23,36 @@
   <script src="./node_modules/angular/angular.min.js"></script>
 
   <!-- 1. Modules -->
-  <script src="./app.js"></script>
+  <!-- <script src="./app.js"></script> -->
+
+  <!-- 6. Scope -->
+  <script src="./scope2.js"></script>
 
 </head>
 <body>
 
-  <div style="margin: 20px;">
+  <div style="margin: 20px;" ng-controller="parentCtrl">
+    <h1>parentCtrl</h1>
+    <h2>name = {{ name }}</h2>
+    <p>scope [name] : <input type="text" ng-model="name"></p>
+    <h2>scope count = {{ scopecount }}</h2>
+    <p>
+      <button ng-click="addCount()">클릭</button>
+    </p>
 
-      <h2>1 + 2 = {{ 1+2 }}</h2>
+    <hr style="border-top: 1px solid #8c8b8b;">
+
+
+    <div style="margin: 20px;" ng-controller="childCtrl">
+        
+        <h1>childCtrl</h1>
+        <h2>name = {{ name }}</h2>
+        <p>scope [name] : <input type="text" ng-model="name"></p>
+        <h2>parentCtrl scope count = {{ scopecount }}</h2>
+        <p>
+          <button ng-click="addCount()">클릭</button>
+        </p>
+    </div>
 
   </div>
 

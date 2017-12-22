@@ -23,14 +23,28 @@
   <script src="./node_modules/angular/angular.min.js"></script>
 
   <!-- 1. Modules -->
-  <script src="./app.js"></script>
+  <!-- <script src="./app.js"></script> -->
+
+  <!-- 2. Controllers -->
+  <script src="./controllers.js"></script>
 
 </head>
-<body>
+<body ng-controller="myCtrl">
 
   <div style="margin: 20px;">
 
+    <!-- 3. Expressions -->
       <h2>1 + 2 = {{ 1+2 }}</h2>
+      <h2>name = {{ name }}</h2>
+      <h2>person[name] = {{ person['name'] }}</h2>
+      <h2>person.age = {{ person.age }}</h2>
+      <h2>readonly = {{ readonly }}</h2>
+      <p>
+        <!-- <input type="text" value="{{ name }}" ng-model="name"> -->
+        <input type="text" ng-model="name" ng-readonly="readonly">
+        <button ng-click="fnClick()">눌러줘</button>
+      </p>
+
 
   </div>
 

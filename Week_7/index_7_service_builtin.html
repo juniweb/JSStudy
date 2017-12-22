@@ -23,17 +23,26 @@
   <script src="./node_modules/angular/angular.min.js"></script>
 
   <!-- 1. Modules -->
-  <script src="./app.js"></script>
+  <!-- <script src="./app.js"></script> -->
+
+  <!-- 7. built-in Service -->
+  <script src="./service_builtin.js"></script>
 
 </head>
 <body>
 
-  <div style="margin: 20px;">
+  <div style="margin: 20px;" ng-controller="myCtrl">
+    <h2>$location.host() = {{ host }}</h2>
 
-      <h2>1 + 2 = {{ 1+2 }}</h2>
+    <h2>$http Response</h2>
+    <pre>{{ httpResult }}</pre>
 
+    <h2>$timeout Response</h2>
+    <pre>{{ timeoutResult }}</pre>
+
+    <h2>$interval = {{ interval }}</h2>
+    
   </div>
-
 
 </body>
 </html>

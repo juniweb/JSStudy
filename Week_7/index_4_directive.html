@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AngularJS Demo</title>
+
+  <link href="./css/custom.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- AngularJS -->
+  <script src="./node_modules/angular/angular.min.js"></script>
+
+  <!-- 1. Modules -->
+  <script src="./app.js"></script>
+
+  <!-- 4. ng Directives -->
+  <script src="./ng_directive.js"></script>
+
+</head>
+<body ng-controller="myCtrl">
+
+  <div style="margin: 20px;">
+
+    <!-- 4. ng Directives -->
+
+      <!-- ngBind 은 단방향 바인딩 -->
+      <h4>ngBind</h4>
+      <p>
+          <span ng-bind="name"></span>
+      </p>
+      <br/>
+
+      <!-- ngModel 은 양방향 바인딩 -->
+      <h4>ngModel</h4>
+      <p><input type="text" ng-model="name"></p>
+      <br/>
+
+      <!-- ngSrc -->
+      <h4>ngSrc</h4>
+      <p><img ng-src="{{imageUrl}}" width="100" height="100"></p>
+      <br/>
+
+      <!-- ngDisabled -->
+      <h4>ngDisabled</h4>
+      <label>Click me to toggle: <input type="checkbox" ng-model="mtDisabled"></label>
+      <br/>
+      <p>
+          <input type="text" value="비활성화" ng-disabled="mtDisabled">
+      </p>
+      <br/>
+
+      <!-- ngReadonly -->
+      <h4>ngReadonly</h4>
+      <label>Click me to toggle: <input type="checkbox" ng-model="myReadOnly"></label>
+      <br/>
+      <p>
+          <input type="text" value="읽기전용" ng-readonly="myReadOnly">
+      </p>
+      <br/>
+
+      <!-- ngClass -->
+      <h4>ngClass</h4>
+      <label>Click me to toggle: <input type="checkbox" ng-model="myClass"></label>
+      <br/>
+      <p>
+        <span ng-class="{'green': myClass == true}">Juniweb</span>
+      </p>
+      <br/>
+      input(red, green, blue): <input type="text" ng-model="myInputClass">
+      <br/>
+      <p>
+        <span ng-class="getClass()">Juniweb</span>
+      </p>
+      <br/>
+
+      <!-- ngStyle -->
+      <h4>ngStyle</h4>
+      input(red, green, blue): <input type="text" ng-model="myStyleColor">
+      <br/>
+      <p>
+          <span ng-style="{'background-color':myStyleColor}">Juniweb</span>
+        </p>
+      <br/>
+
+      <!-- ngClick -->
+      <h4>ngClick</h4>
+      <button ng-click="myButtonClick()">버튼</button>
+      <br/>
+      <p>{{ myCount }}</p>
+      <br/>
+
+      <!-- ngChange -->
+      <h4>ngChange</h4>
+      <label>Click me to toggle: <input type="checkbox" ng-change="myChange()" ng-model="myCheckbox"></label>
+      <br/>
+      <p>{{ myCheckboxResult }}</p>
+      <br/>
+
+      <!-- ngShow -->
+      <h4>ngShow</h4>
+      <label>Click me to toggle: <input type="checkbox" ng-model="myShow"></label>
+      <br/>
+      <p ng-show="myShow">ngShow</p>
+      <br/>
+
+      <!-- ngHide -->
+      <h4>ngHide</h4>
+      <label>Click me to toggle: <input type="checkbox" ng-model="myHide"></label>
+      <br/>
+      <p ng-show="myHide">ngHide</p>
+      <br/>
+
+      <!-- ngRepeat -->
+      <h4>ngRepeat</h4>
+      <br/>
+      <ul>
+        <li ng-repeat="item in personList">{{ $index }} / {{ item.name }} / {{ item.age }}</li>
+      </ul>
+      <br/>
+
+    <!-- ngBindHtml -->
+    <!-- <h4>ngBindHtml</h4>
+    <p>
+        {{ myHTML }}
+    </p>
+    <br/>
+    <pre ng-bind-html="myHtml"></pre>
+    <br/> -->
+
+  </div>
+
+
+</body>
+</html>

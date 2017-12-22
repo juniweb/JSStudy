@@ -25,12 +25,16 @@
   <!-- 1. Modules -->
   <script src="./app.js"></script>
 
+  <!-- 4. ng Directives -->
+  <script src="./custom_directive.js"></script>
+
 </head>
-<body>
+<body ng-controller="myCtrl">
 
   <div style="margin: 20px;">
 
-      <h2>1 + 2 = {{ 1+2 }}</h2>
+    <!-- 4. custom Directives -->
+    <my-example></my-example>
 
   </div>
 

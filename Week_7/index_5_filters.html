@@ -25,12 +25,34 @@
   <!-- 1. Modules -->
   <script src="./app.js"></script>
 
+  <!-- 5. Filters -->
+  <!-- <script src="./custom_filter.js"></script> -->
+  <script src="./filters.js"></script>
+
 </head>
-<body>
+<body ng-controller="myCtrl">
 
   <div style="margin: 20px;">
 
-      <h2>1 + 2 = {{ 1+2 }}</h2>
+    <!-- 5. Filters -->
+    <h4>currency</h4>
+    <h2>{{ myCurrency | currency }}</h2>
+    <br/>
+    <h4>date</h4>
+    <h2>{{ myDate | date }}</h2>
+    <h2>{{ myDate | date : 'yyyy년 MM월 dd일' }}</h2>
+    <br/>
+    <h4>filter</h4>
+    <h2>{{ personList | filter : {'gender': 'M'} }}</h2>
+    <br/>
+    <h4>orderBy</h4>
+    <h2>{{ personList | orderBy : 'age' }}</h2>
+    <br/>    
+    <h4>Custom Filter</h4>
+    <ul>
+        <li ng-repeat="item in personList">{{ $index }} / {{ item.name }} / {{ item.age }} / {{ item.gender | myFilter }}</li>
+    </ul>
+    <br/>
 
   </div>
 
